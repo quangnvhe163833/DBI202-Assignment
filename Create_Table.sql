@@ -1,0 +1,105 @@
+CREATE TABLE Territory(
+	TerritoryID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	TerritoryName NVARCHAR(30) NOT NULL
+)
+CREATE TABLE Student(
+	StudentID VARCHAR(25) NOT NULL PRIMARY KEY,
+	TerritoryID INT NOT NULL FOREIGN KEY REFERENCES Territory(TerritoryID),
+	StudentFirstName NVARCHAR(30) NOT NULL,
+	StudentLastName NVARCHAR(30) NOT NULL,
+	BirthDay DATE NOT NULL,
+	Sex BIT NOT NULL,
+	Major VARCHAR(55) NOT NULL,
+	ContacMail VARCHAR(70) NOT NULL,
+	[Image] NVARCHAR(255) NOT NULL,
+)
+
+CREATE TABLE Lecture(
+	LectureID VARCHAR(25) NOT NULL PRIMARY KEY,
+	TerritoryID INT NOT NULL FOREIGN KEY REFERENCES Territory(TerritoryID),
+	LectureFirstName NVARCHAR(30) NOT NULL,
+	LectureLastName NVARCHAR(30) NOT NULL,
+	BirthDay DATE,
+	Sex BIT NOT NULL,
+	WorkedSince DATE NOT NULL,
+	ContacMail VARCHAR(70) NOT NULL,
+)
+CREATE TABLE Course(
+	CourseID VARCHAR(15) NOT NULL PRIMARY KEY,
+	CourseName VARCHAR(70) NOT NULL,
+	[Number of sessions] INT NOT NULL,
+	Department VARCHAR(70) NOT NULL,
+	Semester VARCHAR(15) NOT NULL,
+	[Number of credits] INT NOT NULL,
+)
+
+CREATE TABLE StudentGroup(
+	GroupID VARCHAR(15) NOT NULL,
+	StudentID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Student(StudentID),
+	CourseID VARCHAR(15) NOT NULL FOREIGN KEY REFERENCES Course(CourseID),
+	CONSTRAINT pk_StudentID_CourseID_GroupID PRIMARY KEY (GroupID,StudentID,CourseID),
+	EnrolledDate DATE NOT NULL,
+)
+CREATE TABLE Class(
+	ClassID VARCHAR(80) NOT NULL PRIMARY KEY,
+	LectureID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Lecture(LectureID),
+)
+CREATE TABLE [Studied-in](
+	ClassID VARCHAR(80) NOT NULL,
+	StudentID VARCHAR(25) NOT NULL ,
+	CourseID VARCHAR(15) NOT NULL ,
+	GroupID VARCHAR(15) NOT NULL,
+	[Attendance status] BIT NOT NULL,
+	CONSTRAINT PK_ClassID_LectureID_CourseID_GroupID_StudentID PRIMARY KEY (ClassID,StudentID,CourseID,GroupID),
+	CONSTRAINT fk_StudentID_CourseID_GroupID FOREIGN KEY (GroupID,StudentID,CourseID) 
+	REFERENCES StudentGroup(GroupID,StudentID,CourseID),
+	CONSTRAINT fk_ClassID FOREIGN KEY (ClassID) REFERENCES Class(ClassID)
+)
+
+CREATE TABLE PieceOfWork(
+	Category VARCHAR(40) NOT NULL PRIMARY KEY,
+	CourseID VARCHAR(15) NOT NULL FOREIGN KEY REFERENCES Course(CourseID),
+	StartDate DATE NOT NULL,
+	EndDate DATE NOT NULL,
+)
+
+CREATE TABLE Assessment(
+	AssessmentID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	Category VARCHAR(40) NOT NULL FOREIGN KEY REFERENCES PieceOfWork(Category),
+	[Type] NVARCHAR(15) NOT NULL,
+	Part INT NOT NULL,
+	[Weight] DECIMAL(5,2) NOT NULL,
+	[Completion Criteria] INT NOT NULL,
+	[No Question] INT,
+)
+
+CREATE TABLE Process(
+	StudentID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Student(StudentID),
+	Category VARCHAR(40) NOT NULL FOREIGN KEY REFERENCES PieceOfWork(Category),
+	CONSTRAINT pk_StudentID_Category PRIMARY KEY (StudentID,Category),
+)
+
+CREATE TABLE [Output](
+	OutputID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	StudentID VARCHAR(25) NOT NULL,
+	Category VARCHAR(40) NOT NULL,
+	CONSTRAINT fk_StudentID_Category FOREIGN KEY (StudentID,Category) REFERENCES Process(StudentID,Category),
+	SubmisstionStatus BIT NOT NULL,
+)
+
+CREATE TABLE Grading(
+	LectureID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Lecture(LectureID),
+	OutputID INT NOT NULL FOREIGN KEY REFERENCES [Output](OutputID),
+	CONSTRAINT pk_LectureID_OutputID PRIMARY KEY (LectureID,OutputID),
+)
+
+CREATE TABLE Result(
+	OutputID INT NOT NULL,
+	[Graded by] VARCHAR(25) NOT NULL,
+	CONSTRAINT fk_OutputID_Graded_by FOREIGN KEY ([Graded by],OutputID) REFERENCES Grading(LectureID,OutputID),
+	AssessmentID INT NOT NULL FOREIGN KEY REFERENCES Assessment(AssessmentID),
+	CONSTRAINT pk_OutputID_Graded_by_AssessmentID PRIMARY KEY (OutputID,[Graded by],AssessmentID),
+	[Day of publication] DATE NOT NULL,
+	Mark FLOAT,
+	[Status] BIT,
+)
