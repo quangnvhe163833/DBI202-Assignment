@@ -1,98 +1,105 @@
+CREATE TABLE Territory(
+	TerritoryID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	TerritoryName NVARCHAR(30) NOT NULL
+)
+CREATE TABLE Student(
+	StudentID VARCHAR(25) NOT NULL PRIMARY KEY,
+	TerritoryID INT NOT NULL FOREIGN KEY REFERENCES Territory(TerritoryID),
+	StudentFirstName NVARCHAR(30) NOT NULL,
+	StudentLastName NVARCHAR(30) NOT NULL,
+	BirthDay DATE NOT NULL,
+	Sex BIT NOT NULL,
+	Major VARCHAR(55) NOT NULL,
+	ContacMail VARCHAR(70) NOT NULL,
+	[Image] NVARCHAR(255) NOT NULL,
+)
 
-Create table Students (
-  StudentID  Varchar(50) Not Null Primary Key,
-  First_Name    NVarchar(50 ) Not Null ,
-  Last_Name   NVarchar(50) Not Null,
-  Gender      Bit      Null,
-  Email       Varchar(50) Not Null,
-  DoB         Date
+CREATE TABLE Lecture(
+	LectureID VARCHAR(25) NOT NULL PRIMARY KEY,
+	TerritoryID INT NOT NULL FOREIGN KEY REFERENCES Territory(TerritoryID),
+	LectureFirstName NVARCHAR(30) NOT NULL,
+	LectureLastName NVARCHAR(30) NOT NULL,
+	BirthDay DATE,
+	Sex BIT NOT NULL,
+	WorkedSince DATE NOT NULL,
+	ContacMail VARCHAR(70) NOT NULL,
 )
-create table Groups(
-  GrID  Varchar(50) Not Null Primary Key,
-  Major    NVarchar(50 ) Not Null
+CREATE TABLE Course(
+	CourseID VARCHAR(15) NOT NULL PRIMARY KEY,
+	CourseName VARCHAR(70) NOT NULL,
+	[Number of sessions] INT NOT NULL,
+	Department VARCHAR(70) NOT NULL,
+	Semester VARCHAR(15) NOT NULL,
+	[Number of credits] INT NOT NULL,
 )
-create table Lectures(
-  LecID  Varchar(50) Not Null Primary Key,
-  Last_Name    NVarchar(50 ) Not Null ,
-  First_Name   NVarchar(50) Not Null,
-  Gender      Bit      Null,
-  Email       Varchar(50) Not Null,
-  DoB         Date,
-  Report Varchar(50),
-  constraint FK_Lectures foreign key (Report) references Lectures(LecID)
+
+CREATE TABLE StudentGroup(
+	GroupID VARCHAR(15) NOT NULL,
+	StudentID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Student(StudentID),
+	CourseID VARCHAR(15) NOT NULL FOREIGN KEY REFERENCES Course(CourseID),
+	CONSTRAINT pk_StudentID_CourseID_GroupID PRIMARY KEY (GroupID,StudentID,CourseID),
+	EnrolledDate DATE NOT NULL,
 )
-create table Assignment(
-AsgID varchar(50) not null primary key,
-Major varchar(50) not null,
-LecID varchar(50) not null foreign key references  Lectures(LecID)
+CREATE TABLE Class(
+	ClassID VARCHAR(80) NOT NULL PRIMARY KEY,
+	LectureID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Lecture(LectureID),
 )
-create table Classes(
-ClassID varchar(50) not null,
-Semester varchar(50) not null,
-Start_Date Date ,
-End_date Date,
-AsgID varchar(50) not null,
-constraint PK_Classes primary key (ClassID),
-constraint FK_Classes foreign key (AsgID) references Assignment(AsgID)
+CREATE TABLE [Studied-in](
+	ClassID VARCHAR(80) NOT NULL,
+	StudentID VARCHAR(25) NOT NULL ,
+	CourseID VARCHAR(15) NOT NULL ,
+	GroupID VARCHAR(15) NOT NULL,
+	[Attendance status] BIT NOT NULL,
+	CONSTRAINT PK_ClassID_LectureID_CourseID_GroupID_StudentID PRIMARY KEY (ClassID,StudentID,CourseID,GroupID),
+	CONSTRAINT fk_StudentID_CourseID_GroupID FOREIGN KEY (GroupID,StudentID,CourseID) 
+	REFERENCES StudentGroup(GroupID,StudentID,CourseID),
+	CONSTRAINT fk_ClassID FOREIGN KEY (ClassID) REFERENCES Class(ClassID)
 )
-Create table Guide(
-GuideID varchar(50) not null primary key,
-Details Varchar(350)
+
+CREATE TABLE PieceOfWork(
+	Category VARCHAR(40) NOT NULL PRIMARY KEY,
+	CourseID VARCHAR(15) NOT NULL FOREIGN KEY REFERENCES Course(CourseID),
+	StartDate DATE NOT NULL,
+	EndDate DATE NOT NULL,
 )
-create table Courses
-(
-CouID varchar(50) not null primary key,
-CName varchar(50) not null
+
+CREATE TABLE Assessment(
+	AssessmentID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	Category VARCHAR(40) NOT NULL FOREIGN KEY REFERENCES PieceOfWork(Category),
+	[Type] NVARCHAR(15) NOT NULL,
+	Part INT NOT NULL,
+	[Weight] DECIMAL(5,2) NOT NULL,
+	[Completion Criteria] INT NOT NULL,
+	[No Question] INT,
 )
-create table Categories(
-CatID varchar(50) not null primary key,
-Name varchar(50) not null,
-Type varchar(50) not null,
-Completion_Criteria varchar(50)
+
+CREATE TABLE Process(
+	StudentID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Student(StudentID),
+	Category VARCHAR(40) NOT NULL FOREIGN KEY REFERENCES PieceOfWork(Category),
+	CONSTRAINT pk_StudentID_Category PRIMARY KEY (StudentID,Category),
 )
-Create Table ASSESSMENT_SYSTEM
-(
- AssID Varchar(50) not null primary key,
- CatID varchar(50) not null foreign key references Categories(CatID),
- CouID varchar(50) not null foreign key references Courses(CouID),
- Num_Of_Ques int,
- Duration varchar(50),
- Weigh    Float,
- GuideID varchar(50) not null foreign key references Guide(GuideID)
+
+CREATE TABLE [Output](
+	OutputID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	StudentID VARCHAR(25) NOT NULL,
+	Category VARCHAR(40) NOT NULL,
+	CONSTRAINT fk_StudentID_Category FOREIGN KEY (StudentID,Category) REFERENCES Process(StudentID,Category),
+	SubmisstionStatus BIT NOT NULL,
 )
-create table Assess
-(
-AssID varchar(50) not null foreign key references ASSESSMENT_SYSTEM(AssID),
-ClassID varchar(50) not null foreign key references Classes(ClassID),
-Constraint PK_Enroll primary key(AssID,ClassID),
+
+CREATE TABLE Grading(
+	LectureID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES Lecture(LectureID),
+	OutputID INT NOT NULL FOREIGN KEY REFERENCES [Output](OutputID),
+	CONSTRAINT pk_LectureID_OutputID PRIMARY KEY (LectureID,OutputID),
 )
-create table Grade
-(
-StudentID varchar(50) not null foreign key references Students(StudentID),
-AssID varchar(50) not null foreign key references ASSESSMENT_SYSTEM(AssID),
-Score Float(15),
-Date Date,
-Constraint PK_Grade primary key(AssID,StudentID,Date)
-)
-create table ENROLL
-(
-GrID varchar(50) not null foreign key references Groups(GrID),
-ClassID varchar(50) not null foreign key references Classes(ClassID),
-Constraint PK_Enroll_ primary key(GrID,ClassID)
-)
-Create table View_Students_Classes(
-StudentID varchar(50) not null,
-ClassID varchar(50) not null,
-Average Float(15) not null,
-Status Varchar(50) not null,
-constraint PK_View_Students_Classes Primary Key(StudentID,ClassID),
-constraint FK_View_Students foreign key (StudentID) references Students(StudentID),
-constraint FK_View_Classes foreign key (ClassID) references Classes(ClassID)
-)
-create table JOIN_Groups_Students (
-  GrID  Varchar(50) Not Null,
-  StudentID    Varchar(50 ) Not Null,
-  constraint PK_JOIN primary key (GrID,StudentID),
-  constraint FK_JOIN_Students foreign key (StudentID) references Students(StudentID),
-  constraint FK_JOIN_Groups foreign key (GrID) references Groups(GrID)
+
+CREATE TABLE Result(
+	OutputID INT NOT NULL,
+	[Graded by] VARCHAR(25) NOT NULL,
+	CONSTRAINT fk_OutputID_Graded_by FOREIGN KEY ([Graded by],OutputID) REFERENCES Grading(LectureID,OutputID),
+	AssessmentID INT NOT NULL FOREIGN KEY REFERENCES Assessment(AssessmentID),
+	CONSTRAINT pk_OutputID_Graded_by_AssessmentID PRIMARY KEY (OutputID,[Graded by],AssessmentID),
+	[Day of publication] DATE NOT NULL,
+	Mark FLOAT,
+	[Status] BIT,
 )
