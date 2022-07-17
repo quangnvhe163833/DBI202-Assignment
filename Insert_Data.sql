@@ -1,802 +1,346 @@
---STUDENT
-INSERT INTO Student(StudentID,TerritoryID,StudentLastName,StudentFirstName,BirthDay,Sex,Major,ContacMail,[Image])
-VALUES
-('DucCNHE161106',1,N'Chau Ngoc','Duc','2002-09-17',1,N'Software Engineering','duccnhe161106@fpt.edu.vn','he161106.png'),
-('ChungDVHE160136',2,N'Do Van','Chung','2002-01-15',1,N'Information Assurance','chungdvhe160136@fpt.edu.vn','he160136.png'),
-('DucNVHE160307',3,N'Nguyen Van','Duc','2002-05-03',1,N'Information Assurance','ducvnhe160307@fpt.edu.vn','he160307.png'),
-('AnhLVHE160318',4,N'Le Viet','Anh','2002-06-10',1,N'Information Assurance','anhvlhe160318@fpt.edu.vn','he160318.png'),
-('HuyNNHE161198',4,N'Nguyen Nhat','Huy','2002-05-27',1,N'Information Assurance','huynnhe161198@fpt.edu.vn','he161198.png'),
-('DatHMHE160594',3,N'Ha Manh','Dat','2002-01-1',1,N'Information Assurance','dathmhe160594@fpt.edu.vn','he160594.png'),
-('TamTTTHE161665',3,N'Tran Thi Thanh','Tam','2002-08-08',0,N'Information Assurance','tamttthe161665@fpt.edu.vn','he161665.png'),
-('ThinhNDHE161890',2,N'Nguyen Doanh','Thinh','2002-09-06',1,N'Information Assurance','thinhndhe161890@fpt.edu.vn','he161890.png'),
-('HiepDVHE163693',1,N'Dao Vu','Hiep','2002-12-10',1,N'Information Assurance','hiepdvhe163693@fpt.edu.vn','he163693.png'),
-('VuongNVHE163581',1,N'Nguyen Van','Vuong','2002-11-11',1,N'Artificial Intelligence','vuongvnhe163581@fpt.edu.vn','he163581.png')
-SELECT * FROM Student
---LECTURE
-INSERT INTO Lecture(LectureID,TerritoryID,LectureLastName,LectureFirstName,BirthDay,Sex,WorkedSince,ContacMail)
-VALUES
-('annt79',1,N'Nguyen Tan','An',NULL,1,'2013-09-20','annt79@fpt.edu.vn'),
-('sonnt5',2,N'Ngo Tung','Son',NULL,1,'2009-01-01','sonnt69@fe.edu.vn'),
-('NangNTH',1,N'Nguyen Thi Hai','Nang',NULL,0,'2010-11-11','NangNTH@fe.edu.vn'),
-('vandt',3,N'Do Thi','Van',NULL,0,'2016-12-09','vandt4@fe.edu.vn'),
-('TungHT22',2,N'Hoang Thanh','Tung',NULL,1,'2019-04-28','TungHT22@fe.edu.vn'),
-('bantq6969',4,N'Tran Quy','Ban',NULL,1,'2010-01-25','bantq6969@fpt.edu.vn')
-SELECT * FROM Lecture
---COURSE
-INSERT INTO Course(CourseID,CourseName,[Number of sessions],Department,Semester,[Number of credits])
-VALUES 
-('CSD201',N'Data Structures and Algorithms',30,N'Information Technology',3,3),
-('DBI202',N'Introduction to Database systems',30,N'Information Technology',3,3),
-('JPD113',N'Elementary Japanese',30,N'Languages',3,3),
-('LAB211',N'Object Oriented Programming practices with JAVA',30,N'Information Technology',3,3),
-('WED201c',N'Web design',5,N'Information Technology',3,3)
-SELECT * FROM Course
----STUDENT GROUP
-INSERT INTO StudentGroup(GroupID,StudentID,CourseID,EnrolledDate)
-VALUES
---CSD
-('IA1604','AnhLVHE160318','CSD201','2022-05-09'),
-('IA1604','ChungDVHE160136','CSD201','2022-05-09'),
-('IA1604','DatHMHE160594','CSD201','2022-05-09'),
-('IA1604','DucCNHE161106','CSD201','2022-05-09'),
-('IA1604','DucNVHE160307','CSD201','2022-05-09'),
-('IA1604','HiepDVHE163693','CSD201','2022-05-09'),
-('IA1604','HuyNNHE161198','CSD201','2022-05-09'),
-('IA1604','TamTTTHE161665','CSD201','2022-05-09'),
-('IA1604','ThinhNDHE161890','CSD201','2022-05-09'),
-('IA1604','VuongNVHE163581','CSD201','2022-05-09'),
---DBI
-('IA1604','AnhLVHE160318','DBI202','2022-05-10'),
-('IA1604','ChungDVHE160136','DBI202','2022-05-10'),
-('IA1604','DatHMHE160594','DBI202','2022-05-10'),
-('IA1604','DucCNHE161106','DBI202','2022-05-10'),
-('IA1604','DucNVHE160307','DBI202','2022-05-10'),
-('IA1604','HiepDVHE163693','DBI202','2022-05-10'),
-('IA1604','HuyNNHE161198','DBI202','2022-05-10'),
-('IA1604','TamTTTHE161665','DBI202','2022-05-10'),
-('IA1604','ThinhNDHE161890','DBI202','2022-05-10'),
-('IA1604','VuongNVHE163581','DBI202','2022-05-10'),
---JPD
-('IA1604','AnhLVHE160318','JPD113','2022-05-10'),
-('IA1604','ChungDVHE160136','JPD113','2022-05-10'),
-('IA1604','DatHMHE160594','JPD113','2022-05-10'),
-('IA1604','DucCNHE161106','JPD113','2022-05-10'),
-('IA1604','DucNVHE160307','JPD113','2022-05-10'),
-('IA1604','HiepDVHE163693','JPD113','2022-05-10'),
-('IA1604','HuyNNHE161198','JPD113','2022-05-10'),
-('IA1604','TamTTTHE161665','JPD113','2022-05-10'),
-('IA1604','ThinhNDHE161890','JPD113','2022-05-10'),
-('IA1604','VuongNVHE163581','JPD113','2022-05-10'),
---LAB
-('IA1604','AnhLVHE160318','LAB211','2022-05-09'),
-('IA1604','ChungDVHE160136','LAB211','2022-05-09'),
-('IA1604','DatHMHE160594','LAB211','2022-05-09'),
-('IA1604','DucCNHE161106','LAB211','2022-05-09'),
-('IA1604','DucNVHE160307','LAB211','2022-05-09'),
-('IA1604','HiepDVHE163693','LAB211','2022-05-09'),
-('IA1604','HuyNNHE161198','LAB211','2022-05-09'),
-('IA1604','TamTTTHE161665','LAB211','2022-05-09'),
-('IA1604','ThinhNDHE161890','LAB211','2022-05-09'),
-('IA1604','VuongNVHE163581','LAB211','2022-05-09'),
---WED
-('SE1637','DucCNHE161106','WED201c','2022-05-21')
-SELECT * FROM StudentGroup ORDER BY CourseID
----CLASS
-select * from Lecture
-select * from Course
-select * from StudentGroup
-select * from Student
-INSERT INTO Class(ClassID,LectureID)
-VALUES
-('CSD201_SLOT1_SUMMER2022_annt79','annt79'),
-('DBI202_SLOT2_SUMMER2022_sonnt5','sonnt5'),
-('LAB211_SLOT3_SUMMER2022_NangNTH','NangNTH'),
-('JPD113_SLOT4_SUMMER2022_vandt','vandt'),
-('WED201c_SLOT5_SUMMER2022_TungHT22','TungHT22')
+--ADD STUDENTS TABLE
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address], Mail) VALUES ('HE163780','Vương Đình','Ngân','1',CAST(N'2002-12-02' AS DATE), 'Hà Nội','NganVDHE163780@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address], Mail) VALUES ('SE143042','Tăng Chí','Khiêm','1',CAST(N'2000-09-08' AS DATE), 'Cao Bằng','KhiemTCSE143042@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('IS149076','Nguyễn Quang','Thạch','1',CAST(N'2000-12-19' AS DATE), 'Bắc Kạn','ThachNQIS149076@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('HE159082','Đoàn Công','Lộc','1',CAST(N'2001-01-15' AS DATE), 'Cần Thơ','LocDCHE159082@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('SE162847','Phạm Hướng','Tiền','1',CAST(N'2002-11-19' AS DATE), 'Phú Thọ','TienPHSE162847@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('HE132932','Nguyễn Khuyến','Học','1',CAST(N'1999-07-19' AS DATE), 'Tuyên Quang','HocNKHE132932@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('IS176801','Đỗ Trường','Sinh','1',CAST(N'2003-07-19' AS DATE), 'Hải Phòng','SinhDTIS175801@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('IS168901','Đặng Bội','Linh','0',CAST(N'2002-08-04' AS DATE), 'Đà Nẵng','LinhDBIS168901@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('HE173690','Ngữ Băng','Yên','0',CAST(N'2003-06-07' AS DATE), 'Hà Nội','YenNBHE173690@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('HE156721','Lý Đinh','Hương','0',CAST(N'2001-03-17' AS DATE), 'Tuyên Quang','HuongLDHE156721@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('HE179012','Vương Hồng','Châu','0',CAST(N'2003-01-02' AS DATE), 'Bắc Ninh','ChauVHHE179012@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('HE178013','Trần Minh','Hiếu','1',CAST(N'2003-08-23' AS DATE), 'Phú Thọ','HieuTMHE179013@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('IS159011','Đỗ Thế','Cường','1',CAST(N'2001-12-09' AS DATE), 'Bắc Ninh','CuongDTIS159200@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('IS159200','Tần Linh','Đam','0',CAST(N'2001-10-10' AS DATE), 'Vũng Tàu','DanTLIS159200@fpt.edu.vn');
+INSERT INTO [dbo].[Students](StudentID, FirstName,LastName, Gender, DateOfBirth, [Address],Mail) VALUES ('SE149001','Tố Đào','Vân','0',CAST(N'09-08-2000' AS DATE), 'Hòa Bình','VanTDSE149001@fpt.edu.vn');
 
-INSERT INTO [Studied-in](ClassID,CourseID,GroupID,StudentID,[Attendance status])
-VALUES
---CSD
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','AnhLVHE160318',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','ChungDVHE160136',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','DatHMHE160594',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','DucCNHE161106',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','DucNVHE160307',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','HiepDVHE163693',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','HuyNNHE161198',0),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','TamTTTHE161665',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','ThinhNDHE161890',1),
-('CSD201_SLOT1_SUMMER2022_annt79','CSD201','IA1604','VuongNVHE163581',1),
---DBI
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','AnhLVHE160318',1),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','ChungDVHE160136',1),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','DatHMHE160594',0),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','DucCNHE161106',1),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','DucNVHE160307',1),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','HiepDVHE163693',0),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','HuyNNHE161198',1),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','TamTTTHE161665',0),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','ThinhNDHE161890',1),
-('DBI202_SLOT2_SUMMER2022_sonnt5','DBI202','IA1604','VuongNVHE163581',1),
---LAB
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','AnhLVHE160318',1),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','ChungDVHE160136',1),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','DatHMHE160594',0),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','DucCNHE161106',1),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','DucNVHE160307',1),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','HiepDVHE163693',0),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','HuyNNHE161198',0),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','TamTTTHE161665',0),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','ThinhNDHE161890',1),
-('LAB211_SLOT3_SUMMER2022_NangNTH','LAB211','IA1604','VuongNVHE163581',1),
---JPD
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','AnhLVHE160318',1),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','ChungDVHE160136',0),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','DatHMHE160594',0),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','DucCNHE161106',1),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','DucNVHE160307',1),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','HiepDVHE163693',1),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','HuyNNHE161198',0),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','TamTTTHE161665',0),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','ThinhNDHE161890',1),
-('JPD113_SLOT4_SUMMER2022_vandt','JPD113','IA1604','VuongNVHE163581',0),
---WED
-('WED201c_SLOT5_SUMMER2022_TungHT22','WED201c','SE1637','DucCNHE161106',0)
-SELECT * FROM Class
+--ADD LETURE TABLE
+INSERT INTO [dbo].[Lecture](LectureID, [Full Name], Mail) VALUES ('SonNT5','Ngô Tùng Sơn','sonnt69@fe.edu.vn')
+INSERT INTO [dbo].[Lecture](LectureID, [Full Name], Mail) VALUES ('VanDT','Đỗ Thị Vân', 'vandt4@fe.edu.vn')
+INSERT INTO [dbo].[Lecture](LectureID, [Full Name], Mail) VALUES ('DucHM29','Hoàng Mạnh Đức','DucHM29@fe.edu.vn')
+INSERT INTO [dbo].[Lecture](LectureID, [Full Name], Mail) VALUES ('NangNTH','Nguyễn Thị Hải Năng', 'NangNTH@fe.edu.vn')
+INSERT INTO [dbo].[Lecture](LectureID, [Full Name], Mail) VALUES ('AnNT79','Nguyễn Tân Ân', 'annt79@fpt.edu.vn')
 
-INSERT INTO PieceOfWork(Category,CourseID,StartDate,EndDate)
-VALUES
---csd
-(N'CSD201_pt','CSD201','2022-05-18','2022-06-18'),
-(N'CSD201_as','CSD201','2022-05-25','2022-06-23'),
-(N'CSD201_pe','CSD201','2022-07-16','2022-07-16'),
-(N'CSD201_fe','CSD201','2022-08-02','2022-08-02'),
---dbi
-(N'DBI202_as','DBI202','2022-07-08','2022-08-02'),
-(N'DBI202_lab','DBI202','2022-05-18','2022-06-18'),
-(N'DBI202_pt','DBI202','2022-05-23','2022-06-21'),
-(N'DBI202_pe','DBI202','2022-07-23','2022-07-23'),
-(N'DBI202_fe','DBI202','2022-08-01','2022-08-01'),
---jpd
-(N'JPD113_mt','JPD113','2022-06-11','2022-06-11'),
-(N'JPD113_ptcpt','JPD113','2022-05-10','2022-07-21'), --participation
-(N'JPD113_pt','JPD113','2022-05-23','2022-06-21'),
-(N'JPD113_fe','JPD113','2022-07-24','2022-07-24'),
---wed
-(N'WED201c_pe','WED201c','2022-08-14','2022-08-14'),
-(N'WED201c_fe','WED201c','2022-08-21','2022-08-21'),
---lab
-(N'LAB211_pratices','LAB211','2022-05-9','2022-07-22')
+--ADD COURSE TABLE
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('CEA201','Computer Organization and Architecture', '30');
+INSERT INTO [dbo].[Course](CourseID,CourseName, [Total]) VALUES ('CSI104','Introduction to Computer Science', '30');
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('PRF192','Programming Fundamentals', '29');
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('NWC204','Computer Networking', '30');
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('PRO192','Object-Oriented Programming', '30');
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('IAO202','Introduction to Information Assurance', '30');
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('JPD113','Elementary Japanese 1-A1.1', '30');
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('CSD201','Data Structures and Algorithms', '30');
+INSERT INTO [dbo].[Course](CourseID,CourseName,[Total]) VALUES ('DBI202','Introduction to Databases', '30');
 
---PROCESS
-INSERT INTO Process(StudentID,Category)
-VALUES
-('AnhLVHE160318','CSD201_as'),
-('AnhLVHE160318','CSD201_fe'),
-('AnhLVHE160318','CSD201_pe'),
-('AnhLVHE160318','CSD201_pt'),
-('AnhLVHE160318','DBI202_as'),
-('AnhLVHE160318','DBI202_fe'),
-('AnhLVHE160318','DBI202_lab'),
-('AnhLVHE160318','DBI202_pe'),
-('AnhLVHE160318','DBI202_pt'),
-('AnhLVHE160318','JPD113_fe'),
-('AnhLVHE160318','JPD113_mt'),
-('AnhLVHE160318','JPD113_pt'),
-('AnhLVHE160318','JPD113_ptcpt'),
-('AnhLVHE160318','LAB211_pratices'),
+--ADD GROUP TABLE
+INSERT INTO [dbo].[Group](GroupID,Major) VALUES ('IA1604','Information Assurance')
+INSERT INTO [dbo].[Group](GroupID,Major) VALUES ('IS1704','Information System')
+INSERT INTO [dbo].[Group](GroupID,Major) VALUES ('CS1604','Computer Science')
 
-('ChungDVHE160136','CSD201_as'),
-('ChungDVHE160136','CSD201_fe'),
-('ChungDVHE160136','CSD201_pe'),
-('ChungDVHE160136','CSD201_pt'),
-('ChungDVHE160136','DBI202_as'),
-('ChungDVHE160136','DBI202_fe'),
-('ChungDVHE160136','DBI202_lab'),
-('ChungDVHE160136','DBI202_pe'),
-('ChungDVHE160136','DBI202_pt'),
-('ChungDVHE160136','JPD113_fe'),
-('ChungDVHE160136','JPD113_mt'),
-('ChungDVHE160136','JPD113_pt'),
-('ChungDVHE160136','JPD113_ptcpt'),
-('ChungDVHE160136','LAB211_pratices'),
+--ADD CATEGORY TABLE
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Assignment', N'on-going', 0.2, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Assignment1', N'on-going', 0.15, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Final Exam', N'final exam', 0.3, N'>4');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Final Exam1', N'final exam', 0.4, N'>4');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Labs', N'on-going', 0.017, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Labs1', N'on-going', 0.03, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Labs2', N'on-going', 0.02, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Practical Exam', N'practical exam', 0.3, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Progress Test', N'Quiz', 0.1, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Progress Test1', N'Quiz', 0.05, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Mid-Term', N'	on-going', 0.3, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Participation', N'on-going', 0.1, N'>0');		
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'FE_Listening', N'final listening', 0.1, N'>4');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'FE_GVR', N'final exam gvr', 0.3, N'>4');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Progress Test2', N'Quiz', 0.2, N'>0');
+INSERT INTO [dbo].[Category] ([CategoryID], [Type], [Weight], [Completion Criteria]) VALUES (N'Exercies', N'Quiz', 0.2, N'>0');
 
-('DatHMHE160594','CSD201_as'),
-('DatHMHE160594','CSD201_fe'),
-('DatHMHE160594','CSD201_pe'),
-('DatHMHE160594','CSD201_pt'),
-('DatHMHE160594','DBI202_as'),
-('DatHMHE160594','DBI202_fe'),
-('DatHMHE160594','DBI202_lab'),
-('DatHMHE160594','DBI202_pe'),
-('DatHMHE160594','DBI202_pt'),
-('DatHMHE160594','JPD113_fe'),
-('DatHMHE160594','JPD113_mt'),
-('DatHMHE160594','JPD113_pt'),
-('DatHMHE160594','JPD113_ptcpt'),
-('DatHMHE160594','LAB211_pratices'),
+--ADD SEMESTER TABLE
+INSERT INTO [dbo].[Semester](SemesterID,CourseID, StartTime,EndTime) VALUES ('Fall2021a', 'CEA201',CAST(N'2021-09-06' AS DATE), CAST(N'2021-11-12' AS DATE));
+INSERT INTO [dbo].[Semester](SemesterID,CourseID, StartTime,EndTime) VALUES ('Fall2021b', 'CSI104',CAST(N'2021-09-07' AS DATE), CAST(N'2021-11-11' AS DATE));
+INSERT INTO [dbo].[Semester](SemesterID,CourseID, StartTime,EndTime) VALUES ('Spring2022a','NWC204',CAST(N'2022-01-05' AS DATE), CAST(N'2022-03-25' AS DATE));
+INSERT INTO [dbo].[Semester](SemesterID,CourseID, StartTime,EndTime) VALUES ('Spring2022b','PRO192', CAST(N'2022-01-05' AS DATE), CAST(N'2022-03-23' AS DATE));
+INSERT INTO [dbo].[Semester](SemesterID,CourseID, StartTime,EndTime) VALUES ('Summer2022a','JPD113', CAST(N'2022-05-10' AS DATE), CAST(N'2022-07-21' AS DATE))
+INSERT INTO [dbo].[Semester](SemesterID,CourseID, StartTime,EndTime) VALUES ('Summer2022b','DBI202', CAST(N'2022-05-10' AS DATE), CAST(N'2022-07-20' AS DATE))
+INSERT INTO [dbo].[Semester](SemesterID,CourseID, StartTime,EndTime) VALUES ('Summer2022c','CSD201', CAST(N'2022-05-09' AS DATE), CAST(N'2022-07-20' AS DATE))
 
-('DucCNHE161106','CSD201_as'),
-('DucCNHE161106','CSD201_fe'),
-('DucCNHE161106','CSD201_pe'),
-('DucCNHE161106','CSD201_pt'),
-('DucCNHE161106','DBI202_as'),
-('DucCNHE161106','DBI202_fe'),
-('DucCNHE161106','DBI202_lab'),
-('DucCNHE161106','DBI202_pe'),
-('DucCNHE161106','DBI202_pt'),
-('DucCNHE161106','JPD113_fe'),
-('DucCNHE161106','JPD113_mt'),
-('DucCNHE161106','JPD113_pt'),
-('DucCNHE161106','JPD113_ptcpt'),
-('DucCNHE161106','LAB211_pratices'),
-('DucCNHE161106','WED201c_fe'),
-('DucCNHE161106','WED201c_pe'),
+-- ADD TEACH TABLE
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('SonNT5', 'Fall2021');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('SonNT5', 'Summer2022');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('NangNTH', 'Spring2022');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('NangNTH', 'Summer2022');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('DucHM29', 'Fall2021');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('DucHM29', 'Spring2022');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('DucHM29', 'Summer2022');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('VanDT', 'Summer2022');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('AnNT79', 'Spring2022');
+INSERT INTO [dbo].[Teach]([LectureID],[SemesterID]) VALUES ('AnNT79', 'Summer2022');
 
-('DucNVHE160307','CSD201_as'),
-('DucNVHE160307','CSD201_fe'),
-('DucNVHE160307','CSD201_pe'),
-('DucNVHE160307','CSD201_pt'),
-('DucNVHE160307','DBI202_as'),
-('DucNVHE160307','DBI202_fe'),
-('DucNVHE160307','DBI202_lab'),
-('DucNVHE160307','DBI202_pe'),
-('DucNVHE160307','DBI202_pt'),
-('DucNVHE160307','JPD113_fe'),
-('DucNVHE160307','JPD113_mt'),
-('DucNVHE160307','JPD113_pt'),
-('DucNVHE160307','JPD113_ptcpt'),
-('DucNVHE160307','LAB211_pratices'),
+--ADD ASSESSMENT TABLE
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'ASM', N'Assignment', 1, N'30 slots', NULL, N'by instructor')
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'ASM1', N'Assignment1', 1, N'30 slots', NULL, N'by instructor')
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'FE', N'Final Exam', 1, N'60''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'FE_GVR', N'FE_GVR', 1, N'60''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'FE_LSN', N'FE_Listening', 1, N'60''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'FE1', N'Final Exam1', 1, N'60''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'FE2', N'Final Exam 2', 1, N'60''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'Labs', N'Labs', 6, N'90''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'Labs1', N'Labs1', 10, N'30 slots', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'Labs2', N'Labs2', 5, N'30 slots', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'MD', N'Mid-Term', 1, N'60''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'PE', N'Practical Exam', 1, N'90''', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'PT', N'Progress Test', 2, N'30''', NULL, N'Multiple Choice on EOS, Google form')
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'PT1', N'Progress Test1', 2, N'25''', NULL, N'Multiple Choice on EOS, Google form')
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'PT2', N'Progress Test2', 2, N'30''', NULL, N'Multiple Choice on EOS, Google form')
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'PTT', N'Participation', 1, N'30 slots', NULL, NULL)
+INSERT [dbo].[Assessment] ([AssessmentID], [CategoryID], [Part], [Duration], [CLO], [Question Type]) VALUES (N'EXX', N'Exercises', 4, N'30''', NULL, NULL)
 
-('HiepDVHE163693','CSD201_as'),
-('HiepDVHE163693','CSD201_fe'),
-('HiepDVHE163693','CSD201_pe'),
-('HiepDVHE163693','CSD201_pt'),
-('HiepDVHE163693','DBI202_as'),
-('HiepDVHE163693','DBI202_fe'),
-('HiepDVHE163693','DBI202_lab'),
-('HiepDVHE163693','DBI202_pe'),
-('HiepDVHE163693','DBI202_pt'),
-('HiepDVHE163693','JPD113_fe'),
-('HiepDVHE163693','JPD113_mt'),
-('HiepDVHE163693','JPD113_pt'),
-('HiepDVHE163693','JPD113_ptcpt'),
-('HiepDVHE163693','LAB211_pratices'),
+-- ADD JOIN TABLE
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'HE132932', N'CS1604')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'IS149076', N'IA1604')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'HE156721', N'IA1604')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'HE163780', N'IS1704')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'IS159200', N'IA1604')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'IS168901', N'IS1704')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'SE143042', N'CS1604')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'SE149001', N'CS1604')
+INSERT [dbo].[Join] ([StudentID], [GroupID]) VALUES (N'HE159082', N'IS1704')
 
-('HuyNNHE161198','CSD201_as'),
-('HuyNNHE161198','CSD201_fe'),
-('HuyNNHE161198','CSD201_pe'),
-('HuyNNHE161198','CSD201_pt'),
-('HuyNNHE161198','DBI202_as'),
-('HuyNNHE161198','DBI202_fe'),
-('HuyNNHE161198','DBI202_lab'),
-('HuyNNHE161198','DBI202_pe'),
-('HuyNNHE161198','DBI202_pt'),
-('HuyNNHE161198','JPD113_fe'),
-('HuyNNHE161198','JPD113_mt'),
-('HuyNNHE161198','JPD113_pt'),
-('HuyNNHE161198','JPD113_ptcpt'),
-('HuyNNHE161198','LAB211_pratices'),
+-- ADD ASSESSMENT_COURSE TABLE
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'CEA201', N'ASM1')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'CEA201', N'EXX')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'CEA201', N'FE1')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'DBI202', N'ASM')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'DBI202', N'FE')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'DBI202', N'Labs2')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'DBI202', N'PE')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'DBI202', N'PT1')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'JPD113', N'FE_GVR')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'JPD113', N'FE_LSN')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'JPD113', N'MD')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'JPD113', N'PT')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'JPD113', N'PTT')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'NWC204', N'FE')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'NWC204', N'Labs1')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'NWC204', N'PTT')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'PRO192', N'ASM')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'PRO192', N'FE')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'PRO192', N'Labs')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'PRO192', N'PE')
+INSERT [dbo].[Course_Asessment] ([CourseID], [AssessmentID]) VALUES (N'PRO192', N'PT1')
 
-('TamTTTHE161665','CSD201_as'),
-('TamTTTHE161665','CSD201_fe'),
-('TamTTTHE161665','CSD201_pe'),
-('TamTTTHE161665','CSD201_pt'),
-('TamTTTHE161665','DBI202_as'),
-('TamTTTHE161665','DBI202_fe'),
-('TamTTTHE161665','DBI202_lab'),
-('TamTTTHE161665','DBI202_pe'),
-('TamTTTHE161665','DBI202_pt'),
-('TamTTTHE161665','JPD113_fe'),
-('TamTTTHE161665','JPD113_mt'),
-('TamTTTHE161665','JPD113_pt'),
-('TamTTTHE161665','JPD113_ptcpt'),
-('TamTTTHE161665','LAB211_pratices'),
+--ADD ENROLL TABLE
+INSERT [dbo].[Enroll] ([GroupID], [SemesterID]) VALUES (N'CS1604', N'Summer2022a')
+INSERT [dbo].[Enroll] ([GroupID], [SemesterID]) VALUES (N'IA1604', N'Fall2021a')
+INSERT [dbo].[Enroll] ([GroupID], [SemesterID]) VALUES (N'IA1604', N'Spring2022a')
+INSERT [dbo].[Enroll] ([GroupID], [SemesterID]) VALUES (N'IA1604', N'Summer2022a')
+INSERT [dbo].[Enroll] ([GroupID], [SemesterID]) VALUES (N'IS1704', N'Spring2022b')
+INSERT [dbo].[Enroll] ([GroupID], [SemesterID]) VALUES (N'IS1704', N'Summer2022b')
 
-('ThinhNDHE161890','CSD201_as'),
-('ThinhNDHE161890','CSD201_fe'),
-('ThinhNDHE161890','CSD201_pe'),
-('ThinhNDHE161890','CSD201_pt'),
-('ThinhNDHE161890','DBI202_as'),
-('ThinhNDHE161890','DBI202_fe'),
-('ThinhNDHE161890','DBI202_lab'),
-('ThinhNDHE161890','DBI202_pe'),
-('ThinhNDHE161890','DBI202_pt'),
-('ThinhNDHE161890','JPD113_fe'),
-('ThinhNDHE161890','JPD113_mt'),
-('ThinhNDHE161890','JPD113_pt'),
-('ThinhNDHE161890','JPD113_ptcpt'),
-('ThinhNDHE161890','LAB211_pratices'),
+select * from [Category]
+-- ADD GRADE TABLE
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE132932', N'FE_GVR', 7, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE132932', N'FE_LSN', 8.2, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE132932', N'MD', 7.5, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE132932', N'PT', 9, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE132932', N'PT', 8, N'Summer2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE132932', N'PTT', 10, N'Summer2022a', 1)
 
-('VuongNVHE163581','CSD201_as'),
-('VuongNVHE163581','CSD201_fe'),
-('VuongNVHE163581','CSD201_pe'),
-('VuongNVHE163581','CSD201_pt'),
-('VuongNVHE163581','DBI202_as'),
-('VuongNVHE163581','DBI202_fe'),
-('VuongNVHE163581','DBI202_lab'),
-('VuongNVHE163581','DBI202_pe'),
-('VuongNVHE163581','DBI202_pt'),
-('VuongNVHE163581','JPD113_fe'),
-('VuongNVHE163581','JPD113_mt'),
-('VuongNVHE163581','JPD113_pt'),
-('VuongNVHE163581','JPD113_ptcpt'),
-('VuongNVHE163581','LAB211_pratices')
----output
-INSERT INTO [Output](StudentID,Category,SubmisstionStatus)
-VALUES
-('AnhLVHE160318','CSD201_as',1),
-('AnhLVHE160318','CSD201_fe',0),
-('AnhLVHE160318','CSD201_pe',0),
-('AnhLVHE160318','CSD201_pt',1),
-('AnhLVHE160318','DBI202_as',0),
-('AnhLVHE160318','DBI202_fe',0),
-('AnhLVHE160318','DBI202_lab',1),
-('AnhLVHE160318','DBI202_pe',0),
-('AnhLVHE160318','DBI202_pt',1),
-('AnhLVHE160318','JPD113_fe',0),
-('AnhLVHE160318','JPD113_mt',1),
-('AnhLVHE160318','JPD113_pt',1),
-('AnhLVHE160318','JPD113_ptcpt',1),
-('AnhLVHE160318','LAB211_pratices',0),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE143042', N'FE_GVR', 3, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],	[SemesterID], [Part]) VALUES (N'SE143042', N'FE_LSN', 3, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE143042', N'MD', 4.5, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE143042', N'PT', 7, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE143042', N'PT', 5, N'Summer2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE143042', N'PTT', 6,  N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE143042', N'FE_GVR', 3,  N'Summer2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE143042', N'FE_LSN', 2,  N'Summer2022a', 2)
 
-('ChungDVHE160136','CSD201_as',1),
-('ChungDVHE160136','CSD201_fe',0),
-('ChungDVHE160136','CSD201_pe',0),
-('ChungDVHE160136','CSD201_pt',1),
-('ChungDVHE160136','DBI202_as',0),
-('ChungDVHE160136','DBI202_fe',0),
-('ChungDVHE160136','DBI202_lab',1),
-('ChungDVHE160136','DBI202_pe',0),
-('ChungDVHE160136','DBI202_pt',1),
-('ChungDVHE160136','JPD113_fe',0),
-('ChungDVHE160136','JPD113_mt',1),
-('ChungDVHE160136','JPD113_pt',1),
-('ChungDVHE160136','JPD113_ptcpt',1),
-('ChungDVHE160136','LAB211_pratices',0),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE149001', N'FE_GVR', 7.6, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE149001', N'FE_LSN', 8.1, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE149001', N'MD', 7.5, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE149001', N'PT', 9.2, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE149001', N'PT', 8.4, N'Summer2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'SE149001', N'PTT', 10, N'Summer2022a', 1)
 
-('DatHMHE160594','CSD201_as',1),
-('DatHMHE160594','CSD201_fe',0),
-('DatHMHE160594','CSD201_pe',0),
-('DatHMHE160594','CSD201_pt',1),
-('DatHMHE160594','DBI202_as',0),
-('DatHMHE160594','DBI202_fe',0),
-('DatHMHE160594','DBI202_lab',1),
-('DatHMHE160594','DBI202_pe',0),
-('DatHMHE160594','DBI202_pt',1),
-('DatHMHE160594','JPD113_fe',0),
-('DatHMHE160594','JPD113_mt',1),
-('DatHMHE160594','JPD113_pt',1),
-('DatHMHE160594','JPD113_ptcpt',0),
-('DatHMHE160594','LAB211_pratices',0),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'ASM1', 10, N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'ASM1', 10, N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'EXX', 9, N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'EXX', 8.9, N'Fall2021a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'EXX', 10, N'Fall2021a', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'EXX', 9.8, N'Fall2021a', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'FE1', 9, N'Fall2021a', 1)
 
-('DucCNHE161106','CSD201_as',1),
-('DucCNHE161106','CSD201_fe',0),
-('DucCNHE161106','CSD201_pe',0),
-('DucCNHE161106','CSD201_pt',1),
-('DucCNHE161106','DBI202_as',0),
-('DucCNHE161106','DBI202_fe',0),
-('DucCNHE161106','DBI202_lab',1),
-('DucCNHE161106','DBI202_pe',0),
-('DucCNHE161106','DBI202_pt',1),
-('DucCNHE161106','JPD113_fe',0),
-('DucCNHE161106','JPD113_mt',1),
-('DucCNHE161106','JPD113_pt',1),
-('DucCNHE161106','JPD113_ptcpt',1),
-('DucCNHE161106','LAB211_pratices',1),
-('DucCNHE161106','WED201c_fe',0),
-('DucCNHE161106','WED201c_pe',0),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'ASM1', 10, N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'ASM1', 10, N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'EXX', 9, N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'EXX', 8.9, N'Fall2021a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'EXX', 10, N'Fall2021a', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'EXX', 9.8, N'Fall2021a', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'FE1', 9, N'Fall2021a', 1)
 
-('DucNVHE160307','CSD201_as',1),
-('DucNVHE160307','CSD201_fe',0),
-('DucNVHE160307','CSD201_pe',0),
-('DucNVHE160307','CSD201_pt',1),
-('DucNVHE160307','DBI202_as',1),
-('DucNVHE160307','DBI202_fe',0),
-('DucNVHE160307','DBI202_lab',1),
-('DucNVHE160307','DBI202_pe',0),
-('DucNVHE160307','DBI202_pt',1),
-('DucNVHE160307','JPD113_fe',0),
-('DucNVHE160307','JPD113_mt',1),
-('DucNVHE160307','JPD113_pt',1),
-('DucNVHE160307','JPD113_ptcpt',1),
-('DucNVHE160307','LAB211_pratices',1),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS159200', N'ASM1', 5,   N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS159200', N'ASM1', 5,   N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],	[SemesterID], [Part]) VALUES (N'IS159200', N'EXX', 4, N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS159200', N'EXX', 7,   N'Fall2021a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS159200', N'EXX', 6,  N'Fall2021a', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'EXX', 5,   N'Fall2021a', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'FE1', 3,   N'Fall2021a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS159200', N'FE1', 4,   N'Fall2021a', 2)
 
-('HiepDVHE163693','CSD201_as',1),
-('HiepDVHE163693','CSD201_fe',0),
-('HiepDVHE163693','CSD201_pe',0),
-('HiepDVHE163693','CSD201_pt',1),
-('HiepDVHE163693','DBI202_as',0),
-('HiepDVHE163693','DBI202_fe',0),
-('HiepDVHE163693','DBI202_lab',1),
-('HiepDVHE163693','DBI202_pe',0),
-('HiepDVHE163693','DBI202_pt',1),
-('HiepDVHE163693','JPD113_fe',0),
-('HiepDVHE163693','JPD113_mt',1),
-('HiepDVHE163693','JPD113_pt',1),
-('HiepDVHE163693','JPD113_ptcpt',0),
-('HiepDVHE163693','LAB211_pratices',0),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'PTT', 10,   N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,   N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,   N'Spring2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,  N'Spring2022a', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,   N'Spring2022a', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,   N'Spring2022a', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,   N'Spring2022a', 6)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,   N'Spring2022a', 7)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,  N'Spring2022a', 8)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,   N'Spring2022a', 9)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'Labs1', 10,  N'Spring2022a', 10)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'PT', 10,  N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'PT', 10,   N'Spring2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE156721', N'FE', 10,  N'Spring2022a', 1)
 
-('HuyNNHE161198','CSD201_as',1),
-('HuyNNHE161198','CSD201_fe',0),
-('HuyNNHE161198','CSD201_pe',0),
-('HuyNNHE161198','CSD201_pt',1),
-('HuyNNHE161198','DBI202_as',0),
-('HuyNNHE161198','DBI202_fe',0),
-('HuyNNHE161198','DBI202_lab',1),
-('HuyNNHE161198','DBI202_pe',0),
-('HuyNNHE161198','DBI202_pt',1),
-('HuyNNHE161198','JPD113_fe',0),
-('HuyNNHE161198','JPD113_mt',1),
-('HuyNNHE161198','JPD113_pt',0),
-('HuyNNHE161198','JPD113_ptcpt',0),
-('HuyNNHE161198','LAB211_pratices',1),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'PTT', 10,   N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 9,  N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 8.5,   N'Spring2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 10,   N'Spring2022a', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 9,  N'Spring2022a', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 10,  N'Spring2022a', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 10, N'Spring2022a', 6)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 10,   N'Spring2022a', 7)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 9.8,  N'Spring2022a', 8)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 10,  N'Spring2022a', 9)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'Labs1', 9,   N'Spring2022a', 10)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'PT', 10,   N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'PT', 8.5,   N'Spring2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'FE', 9,   N'Spring2022a', 1)
 
-('TamTTTHE161665','CSD201_as',1),
-('TamTTTHE161665','CSD201_fe',0),
-('TamTTTHE161665','CSD201_pe',0),
-('TamTTTHE161665','CSD201_pt',1),
-('TamTTTHE161665','DBI202_as',0),
-('TamTTTHE161665','DBI202_fe',0),
-('TamTTTHE161665','DBI202_lab',1),
-('TamTTTHE161665','DBI202_pe',0),
-('TamTTTHE161665','DBI202_pt',1),
-('TamTTTHE161665','JPD113_fe',0),
-('TamTTTHE161665','JPD113_mt',1),
-('TamTTTHE161665','JPD113_pt',1),
-('TamTTTHE161665','JPD113_ptcpt',1),
-('TamTTTHE161665','LAB211_pratices',0),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'PTT', 8,   N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 5,  N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 5,   N'Spring2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 6,   N'Spring2022a', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 7, N'Spring2022a', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 1,   N'Spring2022a', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 1,  N'Spring2022a', 6)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 1,   N'Spring2022a', 7)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 4.8,  N'Spring2022a', 8)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 6,  N'Spring2022a', 9)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'Labs1', 1,   N'Spring2022a', 10)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'PT', 7,  N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'PT', 8,  N'Spring2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'FE', 3,  N'Spring2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'FE', 3.5,  N'Spring2022a', 2)
 
-('ThinhNDHE161890','CSD201_as',1),
-('ThinhNDHE161890','CSD201_fe',0),
-('ThinhNDHE161890','CSD201_pe',0),
-('ThinhNDHE161890','CSD201_pt',1),
-('ThinhNDHE161890','DBI202_as',1),
-('ThinhNDHE161890','DBI202_fe',0),
-('ThinhNDHE161890','DBI202_lab',1),
-('ThinhNDHE161890','DBI202_pe',0),
-('ThinhNDHE161890','DBI202_pt',1),
-('ThinhNDHE161890','JPD113_fe',0),
-('ThinhNDHE161890','JPD113_mt',1),
-('ThinhNDHE161890','JPD113_pt',1),
-('ThinhNDHE161890','JPD113_ptcpt',1),
-('ThinhNDHE161890','LAB211_pratices',1),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'FE_GVR', 7.6,  N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'FE_LSN', 8.1,   N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'MD', 7.5,   N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'PT', 9.2,  N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE156721', N'PT', 8.4,   N'Summer2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE156721', N'PTT', 10,   N'Summer2022a', 1)
 
-('VuongNVHE163581','CSD201_as',1),
-('VuongNVHE163581','CSD201_fe',0),
-('VuongNVHE163581','CSD201_pe',0),
-('VuongNVHE163581','CSD201_pt',1),
-('VuongNVHE163581','DBI202_as',1),
-('VuongNVHE163581','DBI202_fe',0),
-('VuongNVHE163581','DBI202_lab',1),
-('VuongNVHE163581','DBI202_pe',0),
-('VuongNVHE163581','DBI202_pt',1),
-('VuongNVHE163581','JPD113_fe',0),
-('VuongNVHE163581','JPD113_mt',1),
-('VuongNVHE163581','JPD113_pt',1),
-('VuongNVHE163581','JPD113_ptcpt',0),
-('VuongNVHE163581','LAB211_pratices',1)
---ASSESSMENT
-INSERT INTO Assessment(Category,[Type],Part,[Weight],[Completion Criteria],[No Question])
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'FE_GVR', 7,   N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'FE_LSN', 8,   N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'MD', 5,   N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS149076', N'PT', 9,   N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'PT', 8,  N'Summer2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS149076', N'PTT', 10,   N'Summer2022a', 1)
 
-VALUES
-('CSD201_as','on-going',2,20.00,0,null),
-('CSD201_fe',N'final exam',1,30.00,4,50),
-('CSD201_pe','on-going',1,30.00,0,4),
-('CSD201_pt','quiz',2,20.00,0,30),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'FE_GVR', 7.8,   N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'FE_LSN', 8,  N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS159200', N'MD', 9.5, N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'PT', 9,  N'Summer2022a', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'PT', 8.6,   N'Summer2022a', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS159200', N'PTT', 10,   N'Summer2022a', 1)
 
-('DBI202_as','on-going',1,20.00,0,null),
-('DBI202_fe',N'final exam',1,30.00,4,50),
-('DBI202_lab','on-going',5,10.00,4,null),
-('DBI202_pe','on-going',1,30.00,0,null),
-('DBI202_pt','on-going',2,10.00,0,20),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'Labs', 6.5,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'Labs', 7,  N'Spring2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'Labs', 6.8,   N'Spring2022b', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS168901', N'Labs', 7.7,   N'Spring2022b', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'Labs', 7,   N'Spring2022b', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'Labs', 7.5,   N'Spring2022b', 6)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'PT1', 7.2,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'PT1', 8.3,   N'Spring2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'ASM', 7,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS168901', N'PE', 6,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'IS168901', N'FE', 5.1,   N'Spring2022b', 1)
 
-('JPD113_fe',N'final exam',2,40.00,4,null),
-('JPD113_mt','on-going',1,30.00,0,45),
-('JPD113_pt','on-going',2,20.00,0,20),
-('JPD113_ptcpt','on-going',1,10.00,750,null),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'Labs', 6.5,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'Labs', 8,   N'Spring2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'Labs', 7.8,  N'Spring2022b', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'Labs', 7.9,   N'Spring2022b', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'Labs', 8,   N'Spring2022b', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'Labs', 7.5,  N'Spring2022b', 6)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'PT1', 7.2, N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'PT1', 8.3, N'Spring2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'ASM', 7, N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'PE', 6.6,  N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'FE', 7, N'Spring2022b', 1)
 
-('LAB211_pratices','on-going',1,100.00,0,null),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'Labs', 6.5,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE159082', N'Labs', 8,  N'Spring2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'Labs', 7.8,  N'Spring2022b', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'Labs', 7.9,   N'Spring2022b', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'Labs', 8,  N'Spring2022b', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE159082', N'Labs', 7.5,   N'Spring2022b', 6)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'PT1', 7.2,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE159082', N'PT1', 8.3,   N'Spring2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'ASM', 7,   N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'PE', 6.6, N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'FE', 3,  N'Spring2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'FE', 5,  N'Spring2022b', 1)
 
-('WED201c_fe',N'final exam',1,50.00,4,null),
-('WED201c_pe',N'final exam',1,50.00,4,60)
---GRADING
-INSERT INTO Grading(LectureID,OutputID)
-VALUES
-('annt79',1),
-('annt79',2),
-('annt79',3),
-('annt79',4),
-('annt79',15),
-('annt79',16),
-('annt79',17),
-('annt79',18),
-('annt79',29),
-('annt79',30),
-('annt79',31),
-('annt79',32),
-('annt79',43),
-('annt79',44),
-('annt79',45),
-('annt79',46),
-('annt79',59),
-('annt79',60),
-('annt79',61),
-('annt79',62),
-('annt79',73),
-('annt79',74),
-('annt79',75),
-('annt79',76),
-('annt79',87),
-('annt79',88),
-('annt79',89),
-('annt79',90),
-('annt79',101),
-('annt79',102),
-('annt79',103),
-('annt79',104),
-('annt79',115),
-('annt79',116),
-('annt79',117),
-('annt79',118),
-('annt79',129),
-('annt79',130),
-('annt79',131),
-('annt79',132),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'Labs2', 5,  N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'Labs2', 5, N'Summer2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'IS168901', N'Labs2', 5,  N'Summer2022b', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'Labs2', 5,  N'Summer2022b', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'Labs2', 5,  N'Summer2022b', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'PT1', 5, N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'PT2', 5,  N'Summer2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'ASM', 5, N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'PE', 5, N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'IS168901', N'FE', 5,  N'Summer2022b', 1)
 
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'Labs2', 5,   N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'Labs2', 6,  N'Summer2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'Labs2', 7, N'Summer2022b', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'Labs2', 8,  N'Summer2022b', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'Labs2', 9, N'Summer2022b', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE163780', N'PT1', 5, N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'PT2', 8, N'Summer2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'ASM', 8.5,  N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE163780', N'PE', 7.5,  N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],   [SemesterID], [Part]) VALUES (N'HE163780', N'FE', 6.5, N'Summer2022b', 1)
 
-('sonnt5',5),
-('sonnt5',6),
-('sonnt5',7),
-('sonnt5',8),
-('sonnt5',9),
-('sonnt5',19),
-('sonnt5',20),
-('sonnt5',21),
-('sonnt5',22),
-('sonnt5',23),
-('sonnt5',33),
-('sonnt5',34),
-('sonnt5',35),
-('sonnt5',36),
-('sonnt5',37),
-('sonnt5',47),
-('sonnt5',48),
-('sonnt5',49),
-('sonnt5',50),
-('sonnt5',51),
-('sonnt5',63),
-('sonnt5',64),
-('sonnt5',65),
-('sonnt5',66),
-('sonnt5',67),
-('sonnt5',77),
-('sonnt5',78),
-('sonnt5',79),
-('sonnt5',80),
-('sonnt5',81),
-('sonnt5',91),
-('sonnt5',92),
-('sonnt5',93),
-('sonnt5',94),
-('sonnt5',95),
-('sonnt5',105),
-('sonnt5',106),
-('sonnt5',107),
-('sonnt5',108),
-('sonnt5',109),
-('sonnt5',119),
-('sonnt5',120),
-('sonnt5',121),
-('sonnt5',122),
-('sonnt5',123),
-('sonnt5',133),
-('sonnt5',134),
-('sonnt5',135),
-('sonnt5',136),
-('sonnt5',137),
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'Labs2', 6,  N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'Labs2', 6.5,  N'Summer2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'Labs2', 7.8,  N'Summer2022b', 3)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'Labs2', 6.8, N'Summer2022b', 4)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'Labs2', 7.9, N'Summer2022b', 5)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'PT1', 5.5, N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'PT2', 7.8, N'Summer2022b', 2)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'ASM', 8, N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score],  [SemesterID], [Part]) VALUES (N'HE159082', N'PE', 5.5, N'Summer2022b', 1)
+INSERT [dbo].[Grade] ([StudentID], [AssessmentID], [Score], [SemesterID], [Part]) VALUES (N'HE159082', N'FE', 7.5, N'Summer2022b', 1)
 
-('vandt',10),
-('vandt',11),
-('vandt',12),
-('vandt',13),
-('vandt',24),
-('vandt',25),
-('vandt',26),
-('vandt',27),
-('vandt',38),
-('vandt',39),
-('vandt',40),
-('vandt',41),
-('vandt',52),
-('vandt',53),
-('vandt',54),
-('vandt',55),
-('vandt',68),
-('vandt',69),
-('vandt',70),
-('vandt',71),
-('vandt',82),
-('vandt',83),
-('vandt',84),
-('vandt',85),
-('vandt',96),
-('vandt',97),
-('vandt',98),
-('vandt',99),
-('vandt',110),
-('vandt',111),
-('vandt',112),
-('vandt',113),
-('vandt',124),
-('vandt',125),
-('vandt',126),
-('vandt',127),
-('vandt',138),
-('vandt',139),
-('vandt',140),
-('vandt',141),
-
-('NangNTH',14),
-('NangNTH',28),
-('NangNTH',42),
-('NangNTH',56),
-('NangNTH',72),
-('NangNTH',86),
-('NangNTH',100),
-('NangNTH',114),
-('NangNTH',128),
-('NangNTH',142),
-
-('TungHT22',57),
-('TungHT22',58)
-
---RESULT
-INSERT INTO Result(OutputID,[Graded by],AssessmentID,[Day of publication],Mark,[Status])
-VALUES
-(1,'annt79',1,'2022-06-26',8,1),
-(2,'annt79',2,'2022-08-05',NULL,0),
-(3,'annt79',3,'2022-07-30',NULL,0),
-(4,'annt79',4,'2022-06-20',8,1),
-(15,'annt79',1,'2022-06-26',6,1),
-(16,'annt79',2,'2022-08-05',NULL,0),
-(17,'annt79',3,'2022-07-30',NULL,0),
-(18,'annt79',4,'2022-06-20',7.5,1),
-(29,'annt79',1,'2022-06-26',10,1),
-(30,'annt79',2,'2022-08-05',NULL,0),
-(31,'annt79',3,'2022-07-30',NULL,0),
-(32,'annt79',4,'2022-06-20',5,1),
-(43,'annt79',1,'2022-06-26',8,1),
-(44,'annt79',2,'2022-08-05',NULL,0),
-(45,'annt79',3,'2022-07-30',NULL,0),
-(46,'annt79',4,'2022-06-20',7.5,1),
-(59,'annt79',1,'2022-06-26',10,1),
-(60,'annt79',2,'2022-08-05',NULL,0),
-(61,'annt79',3,'2022-07-30',NULL,0),
-(62,'annt79',4,'2022-06-20',9.5,1),
-(73,'annt79',1,'2022-06-26',6,1),
-(74,'annt79',2,'2022-08-05',NULL,0),
-(75,'annt79',3,'2022-07-30',NULL,0),
-(76,'annt79',4,'2022-06-20',7,1),
-(87,'annt79',1,'2022-06-26',5,1),
-(88,'annt79',2,'2022-08-05',NULL,0),
-(89,'annt79',3,'2022-07-30',NULL,0),
-(90,'annt79',4,'2022-06-20',6.5,1),
-(101,'annt79',1,'2022-06-26',7,1),
-(102,'annt79',2,'2022-08-05',NULL,0),
-(103,'annt79',3,'2022-07-30',NULL,0),
-(104,'annt79',4,'2022-06-20',8.5,1),
-(115,'annt79',1,'2022-06-26',9,1),
-(116,'annt79',2,'2022-08-05',NULL,0),
-(117,'annt79',3,'2022-07-30',NULL,0),
-(118,'annt79',4,'2022-06-20',9.5,1),
-(129,'annt79',1,'2022-06-26',8,1),
-(130,'annt79',2,'2022-08-05',NULL,0),
-(131,'annt79',3,'2022-07-30',NULL,0),
-(132,'annt79',4,'2022-06-20',8,1),
---dbi
-(5,'sonnt5',5,'2022-08-02',NULL,0),
-(6,'sonnt5',6,'2022-08-27',NULL,0),
-(7,'sonnt5',7,'2022-06-20',7,1),
-(8,'sonnt5',8,'2022-07-30',NULL,0),
-(9,'sonnt5',9,'2022-06-28',6.5,1),
-(19,'sonnt5',5,'2022-08-02',NULL,0),
-(20,'sonnt5',6,'2022-08-27',NULL,0),
-(21,'sonnt5',7,'2022-06-20',7.5,1),
-(22,'sonnt5',8,'2022-07-30',NULL,0),
-(23,'sonnt5',9,'2022-06-28',7.5,1),
-(33,'sonnt5',5,'2022-08-02',NULL,0),
-(34,'sonnt5',6,'2022-08-27',NULL,0),
-(35,'sonnt5',7,'2022-06-20',6,1),
-(36,'sonnt5',8,'2022-07-30',NULL,0),
-(37,'sonnt5',9,'2022-06-28',7,1),
-(47,'sonnt5',5,'2022-08-02',NULL,0),
-(48,'sonnt5',6,'2022-08-27',NULL,0),
-(49,'sonnt5',7,'2022-06-20',7,1),
-(50,'sonnt5',8,'2022-07-30',NULL,0),
-(51,'sonnt5',9,'2022-06-28',7,1),
-(63,'sonnt5',5,'2022-08-02',NULL,0),
-(64,'sonnt5',6,'2022-08-27',NULL,0),
-(65,'sonnt5',7,'2022-06-20',9,1),
-(66,'sonnt5',8,'2022-07-30',NULL,0),
-(67,'sonnt5',9,'2022-06-28',8,1),
-(77,'sonnt5',5,'2022-08-02',NULL,0),
-(78,'sonnt5',6,'2022-08-27',NULL,0),
-(79,'sonnt5',7,'2022-06-20',7,1),
-(80,'sonnt5',8,'2022-07-30',NULL,0),
-(81,'sonnt5',9,'2022-06-28',6.5,1),
-(91,'sonnt5',5,'2022-08-02',NULL,0),
-(92,'sonnt5',6,'2022-08-27',NULL,0),
-(93,'sonnt5',7,'2022-06-20',5,1),
-(94,'sonnt5',8,'2022-07-30',NULL,0),
-(95,'sonnt5',9,'2022-06-28',5.5,1),
-(105,'sonnt5',5,'2022-08-02',NULL,0),
-(106,'sonnt5',6,'2022-08-27',NULL,0),
-(107,'sonnt5',7,'2022-06-20',7,1),
-(108,'sonnt5',8,'2022-07-30',NULL,0),
-(109,'sonnt5',9,'2022-06-28',6.5,1),
-(119,'sonnt5',5,'2022-08-02',NULL,0),
-(120,'sonnt5',6,'2022-08-27',NULL,0),
-(121,'sonnt5',7,'2022-06-20',9,1),
-(122,'sonnt5',8,'2022-07-30',NULL,0),
-(123,'sonnt5',9,'2022-06-28',10,1),
-(133,'sonnt5',5,'2022-08-02',NULL,0),
-(134,'sonnt5',6,'2022-08-27',NULL,0),
-(135,'sonnt5',7,'2022-06-20',8,1),
-(136,'sonnt5',8,'2022-07-30',NULL,0),
-(137,'sonnt5',9,'2022-06-28',9,1),
---JPD
-(10,'vandt',10,'2022-07-31',NULL,0),
-(11,'vandt',11,'2022-06-16',9.75,1),
-(12,'vandt',12,'2022-05-23',8.5,1),
-(13,'vandt',13,'2022-07-21',10,1),
-(24,'vandt',10,'2022-07-31',NULL,0),
-(25,'vandt',11,'2022-06-16',6.75,1),
-(26,'vandt',12,'2022-05-23',5.5,1),
-(27,'vandt',13,'2022-07-21',8,1),
-(38,'vandt',10,'2022-07-31',NULL,0),
-(39,'vandt',11,'2022-06-16',5.75,1),
-(40,'vandt',12,'2022-05-23',4.5,1),
-(41,'vandt',13,'2022-07-21',7,1),
-(52,'vandt',10,'2022-07-31',NULL,0),
-(53,'vandt',11,'2022-06-16',9.5,1),
-(54,'vandt',12,'2022-05-23',8.75,1),
-(55,'vandt',13,'2022-07-21',10,1),
-(68,'vandt',10,'2022-07-31',NULL,0),
-(69,'vandt',11,'2022-06-16',8,1),
-(70,'vandt',12,'2022-05-23',7.75,1),
-(71,'vandt',13,'2022-07-21',10,1),
-(82,'vandt',10,'2022-07-31',NULL,0),
-(82,'vandt',11,'2022-06-16',7,1),
-(84,'vandt',12,'2022-05-23',6.75,1),
-(85,'vandt',13,'2022-07-21',7.5,1),
-(96,'vandt',10,'2022-07-31',NULL,0),
-(97,'vandt',11,'2022-06-16',5,1),
-(98,'vandt',12,'2022-05-23',5.75,1),
-(99,'vandt',13,'2022-07-21',6.5,1),
-(110,'vandt',10,'2022-07-31',NULL,0),
-(111,'vandt',11,'2022-06-16',6,1),
-(112,'vandt',12,'2022-05-23',6.75,1),
-(113,'vandt',13,'2022-07-21',7,1),
-(124,'vandt',10,'2022-07-31',NULL,0),
-(125,'vandt',11,'2022-06-16',10,1),
-(126,'vandt',12,'2022-05-23',8.75,1),
-(127,'vandt',13,'2022-07-21',10,1),
-(138,'vandt',10,'2022-07-31',NULL,0),
-(139,'vandt',11,'2022-06-16',5,1),
-(140,'vandt',12,'2022-05-23',4.75,1),
-(141,'vandt',13,'2022-07-21',7,1),
---LAB
-(14,'NangNTH',14,'2022-07-22',660,0),
-(28,'NangNTH',14,'2022-07-22',570,0),
-(42,'NangNTH',14,'2022-07-22',420,0),
-(56,'NangNTH',14,'2022-07-22',725,0),
-(72,'NangNTH',14,'2022-07-22',760,1),
-(86,'NangNTH',14,'2022-07-22',550,0),
-(100,'NangNTH',14,'2022-07-22',773,1),
-(114,'NangNTH',14,'2022-07-22',60,0),
-(128,'NangNTH',14,'2022-07-22',750,1),
-(142,'NangNTH',14,'2022-07-22',752,1),
---WED
-(57,'TungHT22',15,'2022-08-29',NULL,0),
-(58,'TungHT22',16,'2022-07-21',NULL,0)
+--ADD VIEW TABLE
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE132932', N'Summer2022a', 7.87, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE156721', N'Fall2021a', 9.43, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE156721', N'Spring2022a', 10, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE156721', N'Summer2022a', 7.2, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE159082', N'Spring2022b', 4, N'NOT PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE159082', N'Summer2022b', 6.87, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE163780', N'Spring2022b', 7.03, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'HE163780', N'Summer2022b', 7.25, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS149076', N'Fall2021a', 9.43, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS149076', N'Spring2022a', 8.41, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS149076', N'Summer2022a', 7.1, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS159200', N'Fall2021a', 4.75, N'NOT PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS159200', N'Spring2022a', 4.5, N'NOT PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS159200', N'Summer2022a', 8.75, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS168901', N'Spring2022b', 6.23, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'IS168901', N'Summer2022b', 5, N'PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'SE143042', N'Summer2022a', 4.25, N'NOT PASSED')
+INSERT [dbo].[View] ([StudentID], [SemesterID], [Avarage], [Status]) VALUES (N'SE149001', N'Summer2022a', 8.1, N'PASSED')
